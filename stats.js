@@ -12,7 +12,7 @@ document.getElementById('getTopArtistsButton').addEventListener('click', functio
     const term = document.querySelector('input[name="term"]:checked').value;
 
     clear();
-    showAllTopArtists(term, limit);
+    showAllTopArtists(accessToken, term, limit);
 });
 
 document.getElementById('getTopTracksButton').addEventListener('click', function () {
@@ -20,7 +20,7 @@ document.getElementById('getTopTracksButton').addEventListener('click', function
     const term = document.querySelector('input[name="term"]:checked').value;
 
     clear();
-    showAllTopTracks(term, limit);
+    showAllTopTracks(accessToken, term, limit);
 });
 
 function clear() {
@@ -29,7 +29,7 @@ function clear() {
 }
 
 
-async function showAllTopArtists(term, limit) {
+async function showAllTopArtists(accessToken, term, limit) {
     const data = await getSpotify('https://api.spotify.com/v1/me/top/artists?time_range=' + term + '&limit=' + limit);
     const topArtistsDataDiv = document.getElementById('topArtistsData');
     topArtistsDataDiv.innerHTML = '';
@@ -55,7 +55,7 @@ async function showAllTopArtists(term, limit) {
 }
 
 
-async function showAllTopTracks(term, limit) {
+async function showAllTopTracks(accessToken, term, limit) {
     const data = await getSpotify('https://api.spotify.com/v1/me/top/tracks?time_range=' + term + '&limit=' + limit);
 
 
