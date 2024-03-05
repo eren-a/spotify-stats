@@ -1,90 +1,91 @@
-html {
-    background-color: rgb(32, 32, 32);
-    font-family: "roboto", sans-serif, "consolas";
-    margin: 0;
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-    color: lightgray;
+* {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+
     font-size: 24px;
 }
 
-@keyframes popUp {
-    from {
-        opacity: 0;
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 20px;
     }
-    to {}
 }
 
-h1 {
-    font-size: 55px;
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    background-color: rgb(32, 32, 32);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     color: lightgray;
 }
 
-#header {
-    top: 0;
-    border-radius: 10px;
-    z-index: 100;
-    margin: 20px auto;
-
-    animation: popUp 1s;
-
+h1 {
+    font-size: 2rem;
 }
 
 .container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .radio-container {
-    position: relative;
-    margin: 10px auto;
-    width: 15%;
-    transition: 0.5s;
+    width: 30rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    text-align: right;
+    padding: 0.3rem;
+}
+
+.radio-container input {
+    width: 1rem;
+}
+
+
+.limit-container {
+    width: 30rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    padding: 1rem;
+}
+
+.limit {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.limit2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
     color: grey;
+    text-align: center;
 }
 
-.custom-radio {
-    display: none;
+.limit2:focus {
+    outline: none;
 }
-
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #202020;
-    border: 5px solid #282828;
-    border-radius: 50%;
-}
-
-.custom-radio:checked + .checkmark {
-    background-color: #417e44;
-    border-color: #417e44;
-}
-
-.radio-container:hover .custom-radio:checked + .checkmark {
-    transition: 0.4s;
-    background-color: #417e44;
-    border-color: #5daf61;
-}
-
-.radio-container:hover {
-    transition: 0.5s;
-    color: rgb(255, 255, 255);
-} 
-
-.radio-container:hover .checkmark{
-    transition: 0.4s;
-    border-color: grey;
-} 
 
 button {
-    font-family: "roboto", sans-serif, "consolas";
-    font-size: 24px;
-    margin-right: 10px;
+    width: 15rem;
+    margin-right: 0.5rem;
     color: lightgray;
     background-color: rgb(28, 28, 28);
+
+    transition: box-shadow 0.3s;
     box-shadow: 10px 10px 10px rgb(20, 20, 20);
     border: 0px;
     padding: 6px 10px;
@@ -95,152 +96,71 @@ button:hover {
     background-color: grey;
     color: white;
 
-    animation: buttonAnim1 0.3s ease-out;
     box-shadow: 5px 5px 0px rgb(20, 20, 20);
 }
 
-@keyframes buttonAnim1 {
-    from {
-        box-shadow: 10px 10px 10px rgb(20, 20, 20);
-    }
-
-    to {
-        box-shadow: 5px 5px 0px rgb(20, 20, 20);
-    }
+.data-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
 }
 
-button:not(:hover) {
-    animation: buttonAnim2 0.3s ease-out;
+#topArtistsData,
+#topTracksData {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
 }
 
-@keyframes buttonAnim2 {
-    from {
-        box-shadow: 5px 5px 0px rgb(20, 20, 20);
-    }
 
-    to {
-        box-shadow: 10px 10px 10px rgb(20, 20, 20);
-    }
-}
+@media screen and (max-width: 1200px) {
 
-.limit {
-    font-family: "roboto", sans-serif, "consolas";
-    font-size: 24px;
-    margin-bottom: 12px;
-    color: lightgray;
-}
-
-.limit2 {
-    font-family: "roboto", sans-serif, "consolas";
-    font-size: 24px;
-    margin-bottom: 12px;
-    color: grey;
-    text-align: center;
-}
-
-.limit2:focus {
-    outline: none;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-p {
-    font-size: 24px;
-    margin: 10px;
-    display: inline;
-}
-
-img {
-    position: relative;
-    width: 15vw;
-    height: 20vw;
-    object-fit: cover;
-    margin: 25px;
-    border-radius: 10px;
-    transition: opacity 0.5s ease-out;
-}
-
-.artist-container:hover img{
-    animation: hoverIMG 0.4s ease-out;
-    animation-fill-mode: forwards;
-    opacity: 0.3;
-    filter: blur(1px);
-}
-
-@keyframes hoverIMG {
-    from {
-        transform: scale(1);
-        opacity: 1;
-        filter: blur(0px);
-    }
-
-    to {
-        transform: scale(1.1);
-        opacity: 0.3;
-        filter: blur(1px);
+    #topArtistsData,
+    #topTracksData {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
     }
 }
 
-.artist-container:not(:hover) img{
-    animation: unhoverIMG 0.3s ease-out;
-    transform: scale(1);
+@media screen and (max-width: 900px) {
+
+    #topArtistsData,
+    #topTracksData {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+
+
+#topArtistsData img,
+#topTracksData img {
+    width: 10rem;
+    border-radius: 0.5rem;
+
     opacity: 1;
-    filter: blur(0px);
+    transition: opacity 0.3s, transform 0.3s;
 }
 
-@keyframes unhoverIMG {
-    from {
-        transform: scale(1.1);
-        opacity: 0.3;
-        filter: blur(1px);
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
-        filter: blur(0px);
-    }
+#topArtistsData img:hover,
+#topTracksData img:hover {
+    transform: scale(1.1);
+    opacity: 0.3;
 }
+
 
 .artist-container {
-    position: relative;
-    display: inline-block;
+    max-width: 10rem;
 }
 
 .artist-container p {
-    color: white;
-    position: absolute;
-    bottom: 30px;
-    left: 20px;
-    width: 80%;
-    margin: 0;
-    padding: 10px;
-    text-align: left;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s ease-out;
-    pointer-events: none;
+    font-size: 0.5rem;
 }
-
-.artist-container:hover p {
-    animation: hoverP 1s ease-out;
-    visibility: visible;
-    opacity: 1;
-}
-
-@keyframes hoverP {
-    from {
-        visibility: visible;
-        opacity: 0;
-    }
-
-    to {
-        visibility: visible;
-        opacity: 1;
-    }
-}
-
