@@ -1,6 +1,6 @@
 # Check your own Spotify stats!
 
-Does not work, I have to manually add the users e-mail to my spotify api dashboard for them to use the website. Check out the [Demo!](https://eren-a.github.io/spotify-stats-demo/)
+I have to manually add the users E-mail to my Spotify API dashboard for them to use the website. Check out the [Demo!](https://eren-a.github.io/spotify-stats-demo/)
 
 This project is a web application that allows users to view their top artists and tracks on Spotify based on different time ranges (short-term, mid-term, and long-term). The application utilizes the Spotify Web API to fetch user data and display it in a user-friendly interface.
 
